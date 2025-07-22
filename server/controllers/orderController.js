@@ -149,14 +149,14 @@ export const stripeWebHooks = async (req,res)=>{
 
         const {orderId,userId}=session.data[0].metadata;
 
-        await Order.findByIdAndUpdate(orderId,{ispaid:true})
-
+        await Order.findByIdAndUpdate(orderId,{isPaid:true})
+        console.log('.......')
         await User.findByIdAndUpdate(userId,{cartItems:{}})
         break;
       }
       case "payment_intent.payment_failed":{
         const paymentIntent=event.data.object;
-        const paymentIntentId=paymentIntent._id
+        const paymentIntentId=paymentIntent.id
 
 
         const session=await stripeInstance.checkout.sessions.list({
@@ -185,7 +185,7 @@ export const getUserOrders = async (req, res) => {
 
     const orders = await Order.find({
       userId,
-      $or: [{ paymentType: 'COD' }, { ispaid: true }]
+      $or: [{ paymentType: 'COD' }, { isPaid: true }]
     }).populate("items.product address").sort({ createdAt: -1 });
 
     res.json({ success: true, orders });
@@ -201,7 +201,7 @@ export const getAllOrders = async (req, res) => {
   try {
 
     const orders = await Order.find({
-      $or: [{ paymentType: 'COD' }, { ispaid: true }]
+      $or: [{ paymentType: 'COD' }, { isPaid: true }]
     }).populate("items.product address").sort({ createdAt: -1 });
 
     res.json({ success: true, orders });

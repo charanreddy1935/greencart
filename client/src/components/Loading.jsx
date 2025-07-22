@@ -13,7 +13,7 @@ const Loading = () => {
         if(nextUrl){
             setTimeout(()=>{
                 navigate(`/${nextUrl}`)
-            },10000)
+            },5000)
         }
     },[nextUrl])
 
