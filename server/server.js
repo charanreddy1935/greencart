@@ -1,5 +1,5 @@
 import cookieParser from 'cookie-parser';
-import express, { application, json } from 'express';
+import express from 'express';
 import cors from 'cors';
 import connectDB from './configs/db.js';
 import 'dotenv/config'
