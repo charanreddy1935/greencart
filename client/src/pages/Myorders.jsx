@@ -25,7 +25,7 @@ const Myorders = () => {
        fetchMyOrders();
      }
 
-  }, []);
+  }, [user]);
 
   return (
     <div className='mt-16'>
