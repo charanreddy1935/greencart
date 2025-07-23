@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { assets, categories } from '../../assets/assets';
 import toast from 'react-hot-toast';
-import { useAppContext } from '../../context/Appcontext';
+import { useAppContext } from '../../context/AppContext';
 
 
 

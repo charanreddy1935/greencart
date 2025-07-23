@@ -5,7 +5,7 @@ import Navbar
  import { Routes, Route, useLocation } from 'react-router-dom';
  import {Toaster} from 'react-hot-toast'
 import Footer from './components/Footer';
-import { useAppContext } from './context/Appcontext';
+import { useAppContext } from './context/AppContext';
 import Loginform from './components/Loginform';
 import AllProducts from './pages/AllProducts';
 import ProductCategory from './pages/ProductCategory';
