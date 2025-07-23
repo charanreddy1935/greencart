@@ -3,7 +3,7 @@ import MainBanner from '../components/MainBanner'
 import Categories from '../components/Categories'
 import BestSellers from '../components/BestSellers'
 import BottomBanner from '../components/BottomBanner'
-import Newsletter from '../components/newsletter'
+import Newsletter from '../components/Newsletter'
 
 
 const Home = () => {
