@@ -10,7 +10,7 @@ import Loginform from './components/Loginform';
 import AllProducts from './pages/AllProducts';
 import ProductCategory from './pages/ProductCategory';
 import Productpage from './pages/Productpage';
-import Cart from './pages/cart';
+import Cart from './pages/Cart';
 import Addaddress from './pages/Addaddress';
 import Myorders from './pages/Myorders';
 import Sellerlogin from './components/seller/Sellerlogin';
