@@ -18,7 +18,15 @@ const MainBanner = () => {
       />
 
       {/* Overlay Content at Bottom */}
-      <div className="absolute bottom-6 md:bottom-12 left-0 right-0 flex flex-col items-center text-center text-gray-600 px-4">
+      <div className="absolute left-0 right-0 
+      bottom-6 md:bottom-20
+      md:top-1/2 md:-translate-y-1/2 
+      md:left-12 md:right-auto
+      flex flex-col 
+      items-center md:items-start 
+      text-center md:text-left 
+      text-gray-600 
+      px-4">
         <h1 className="text-3xl md:text-5xl font-bold max-w-[600px] leading-tight">
           Freshness you can Trust
         </h1>
