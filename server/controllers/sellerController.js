@@ -18,7 +18,7 @@ export const sellerLogin=async (req,res)=>{
         maxAge: 7 * 24 * 60 * 60 * 1000,
       })
        
-      console.log("..........")
+    
       return res.json({success:true,message:"logged in"})
      }
      return res.json({ success: false, message: 'Invalid email or password' });
@@ -43,7 +43,7 @@ export const sellerLogout=async (req,res) => {
        res.clearCookie('sellerToken',{
         httponly:true,
         secure: process.env.NODE_ENV === 'production',
-        sameSite: 'Lax',
+        sameSite:process.env.NODE_ENV === 'production' ? 'None' : 'Lax',
       })
 
       return res.json({success:true,message:"logged out"})

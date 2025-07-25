@@ -49,9 +49,16 @@ const Cart = () => {
 
    const placeOrder=async ()=>{
     try {
+
+        if(!user){
+            return toast.error("please login!")
+        }
+
         if(!selectedAdddress){
            return toast.error("please select a address")
         }
+
+
 
         if(paymentOption==='COD'){
             const {data}=await axios.post('/api/order/cod',{

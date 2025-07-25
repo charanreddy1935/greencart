@@ -12,7 +12,9 @@ const Navbar = () => {
    const logout= async ()=>{
 
       try {
-        const {data}=await axios.get('/api/user/logout');
+        const {data}=await axios.post('/api/user/logout',{
+      withCredentials:true,
+    });
         if(data.success){
           toast.success(data.message)
            setuser(null);
@@ -45,6 +47,7 @@ const Navbar = () => {
             <div className="hidden sm:flex items-center gap-8">
                 <NavLink to='/'>Home</NavLink>
                 <NavLink to='/products'>All products</NavLink>
+                <NavLink to='/seller'> seller dashboard</NavLink>
                 
 
                 <div className="hidden lg:flex items-center text-sm gap-2 border border-gray-300 px-3 rounded-full">

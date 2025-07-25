@@ -5,7 +5,7 @@ import { Link, NavLink,Outlet } from 'react-router-dom';
 import toast from 'react-hot-toast';
 
 const Sellerlayout = () => {
-    const { axios,navigate } = useAppContext();
+    const { axios,navigate,setIsSeller} = useAppContext();
 
 
     const sidebarLinks = [
@@ -17,10 +17,13 @@ const Sellerlayout = () => {
 
     const logout =async ()=>{
         try {
-           const {data} =await axios.get('/api/seller/logout')
+           const {data} =await axios.post('/api/seller/logout',{
+      withCredentials:true,
+    })
           
            if(data.success){
             toast.success(data.message)
+            setIsSeller(false);
             navigate('/')
            }else{
             toast.error(data.message)

@@ -6,7 +6,7 @@ import { useAppContext } from '../../context/AppContext';
 
 
 const Addproduct = () => {
-  const {axios}=useAppContext();
+  const {axios,fetchProducts}=useAppContext();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -58,13 +58,14 @@ const Addproduct = () => {
        if(data.success){
         toast.success('product added successfully')
         setFormData({
-    name: '',
-    description: '',
-    category: '',
-    price: '',
-    offerPrice: '',
-    images: []
-  })
+         name: '',
+         description: '',
+         category: '',
+         price: '',
+         offerPrice: '',
+         images: []
+       })
+       fetchProducts();
        }else{
         toast.error(data.message)
        }
